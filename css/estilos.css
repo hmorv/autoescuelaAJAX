@@ -14,6 +14,7 @@ html {
 }
 body {
 	background-color: #333;
+	width: 100%;
 }
 h1 {
 	font-size: 5rem;
@@ -25,13 +26,13 @@ h1 {
 header, nav, article, footer {
 	padding: 1rem;
 }
-header {
+/*header {
 	background-color: green;
 }
 
 nav {
 	background-color: orange;
-}
+}*/
 
 nav ul {
 	text-align: center;
@@ -50,12 +51,32 @@ nav ul li:hover {
 
 
 
-article {
+/*article {
 	background-color: pink;
+}*/
+.bloque-pregunta {
+	margin: 1rem 2rem;
 }
-footer {
+.enunciado {
+	font-weight: bolder;
+	color: #fff;
+}
+.respuesta {
+	color: orange;
+	margin-top: .6rem;
+}
+.respuesta:hover {
+	color: #ff0000;
+}
+input[type=checkbox]:checked:after {
+	color: #00ff00;
+}
+article p {
+	font-size: 2rem;
+}
+/*footer {
 	background-color: blue;
-}
+}*/
 footer p {
 	text-align: center;
 	font-size: 2rem;
