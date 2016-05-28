@@ -6,7 +6,7 @@ function crear_formulario(d) {
 // 	var r = "<p> Pregunta" + (i+1) + "<br />" + 
 // }
 
-function cargar_preguntas_ajax(xml) {
+function cargar_respuestas_ajax(xml, r) {
 		$.ajax({
 			url: xml,
 			type: 'GET',
@@ -15,10 +15,15 @@ function cargar_preguntas_ajax(xml) {
 			//var xmlDoc = $.parseXML(data);
 			$xml = $(data);
 			$p = $xml.find("test");
-			$preguntas = $xml.find("pregunta");
+			$respuestas = $xml.find("RespuestaOK");
 			//console.log($p);
-			console.log($preguntas);
-			return $preguntas;
+			console.log($respuestas);
+			//return $respuestas;
+			var result = [];
+			for (var i = 0; i < $respuestas.length; i++) {
+				r.push($respuestas[i].textContent);
+			}
+			return r;
 		}
 	})
 		.done(function() {
@@ -37,9 +42,9 @@ function generar_bloques_preguntas($preguntas, destino) {
 		var result = "";
 		for(var i = 0; i < $preguntas.length; i++ ) {
 			result += "<p> Pregunta" + (i+1) + "<br />" + $preguntas[i].childNodes[1].textContent + "</p>";
-			result += "<ul><li><label><input type='radio' name='"+i+"' value='0'>" + $preguntas[i].childNodes[3].textContent + "</label></li>";
-			result += "<li><label><input type='radio' name='"+i+"' value='1'>" + $preguntas[i].childNodes[5].textContent + "</label></li>";
-			result += "<li><label><input type='radio' name='"+i+"' value='2'>" + $preguntas[i].childNodes[7].textContent + "</label></li></ul>";
+			result += "<ul><li><label><input type='radio' name='"+i+"' value='"+(i+1)+"'>" + $preguntas[i].childNodes[3].textContent + "</label></li>";
+			result += "<li><label><input type='radio' name='"+i+"' value='"+(i+1)+"'>" + $preguntas[i].childNodes[5].textContent + "</label></li>";
+			result += "<li><label><input type='radio' name='"+i+"' value='"+(i+1)+"'>" + $preguntas[i].childNodes[7].textContent + "</label></li></ul>";
 		}
 		return result;
 	}
@@ -50,20 +55,28 @@ function comprobar_respuesta(pregunta, respuesta) {
 }
 
 function get_respuestas(origen) {
-	var result = [];
+	
+	/*var r = "";
+	for(var i = 0; i < 30; i++) {
+		r += "0";
+	}*/
+	var result = [];//r.split("");
 	switch (origen) {
 		case "local":
-			for(var i = 0; i < $("input").length; i++) {
-				$("input").each(function(index, el) {
-					result.push($(this).val());
+			//for(var i = 0; i < $("input").length; i++) {
+				$(":radio").each(function(index, el) {
+					if($(this).is(':checked'))
+						result.push('Respuesta' + $(this).val());
 				});
-			}
+				return result;
+			//}
 		break;
 		case "remoto":
-			var obj = cargar_preguntas_ajax('xml/datos.xml');
-			for (var i = 0; i < obj.length; i++) {
-				result.push(obj[i]);
-			}
+			cargar_respuestas_ajax('xml/datos.xml', result);
+			//var $obj = cargar_respuestas_ajax('xml/datos.xml');
+			/*for (var i = 0; i < $obj.length; i++) {
+				result.push($obj[i]);
+			}*/
 			return result;
 		break;
 		default:
@@ -78,13 +91,13 @@ function get_respuestas(origen) {
 		var respuestas_usuario = get_respuestas("local");
 		var respuestas_original = get_respuestas("remoto");
 		for(var i = 0; i < respuestas_original.length; i++) {
-			if(comprobar_respuesta(respuesta_usuario[i], respuesta_original[i])) {
+			if(comprobar_respuesta(respuestas_usuario[i], respuestas_original[i])) {
 				resul++;
 			} else {
 
 			}
 		}
-		if(resul > 20) 
+		if(resul > 1) 
 			mostrar_mensaje("#resultado", "<h2>Aprobado!</h2>");
 		else
 			mostrar_mensaje("#resultado", "<h2>Suspendido!</h2>");
@@ -139,6 +152,7 @@ function get_respuestas(origen) {
 
 	$(document).ready(function() {
 		$("#inicio").click(function(event) {
+			$("section").empty();
 			mostrar_mensaje("#resultado","<h1>Vamos, suerte!</h1>");
 			cargar_preguntas('xml/datos.xml');
 			$(this).css({
@@ -150,6 +164,7 @@ function get_respuestas(origen) {
 			
 		});
 		$("#corregir").click(function(event) {
+
 			mostrar_mensaje("#resultado","<h1>Correción de test</h1>");
 			corregir_test();
 			//mostrar errores
