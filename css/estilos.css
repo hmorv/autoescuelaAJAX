@@ -8,12 +8,15 @@
 */
 a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
 
+@import url(https://fonts.googleapis.com/css?family=Oswald);
+
 /* html element 62.5% font-size for REM use */
 html {
 	font-size:62.5%;
 }
 body {
 	background-color: #333;
+	font-family: 'Oswald', sans-serif;
 }
 h1 {
 	font-size: 5rem;
@@ -26,11 +29,11 @@ header, nav, article, footer {
 	padding: 1rem;
 }
 header {
-	background-color: green;
+	/*background-color: green;*/
 }
 
 nav {
-	background-color: orange;
+	/*background-color: orange;*/
 }
 
 nav ul {
@@ -46,15 +49,45 @@ nav ul li:after {
 nav ul li:hover {
 	color: #FF0000;
 }
+#corregir,
+#anterior,
+#siguiente {
+	display: none;
+}
 
 
 
 
 article {
-	background-color: pink;
+	/*background-color: pink;*/
+}
+section {
+	width: 58%;
+	background-color: #999;
+	float: left;
+	margin-left: 2%;
+	margin-right: 2%;
+	padding: 4% 5%;
+
+}
+section p {
+	font-size: 2rem;
+	margin-bottom: 1rem;
+}
+section input {
+	margin-bottom: 2rem;
+}
+aside {
+	width: 25%;
+	background-color: #446644;
+	float: left;
+	margin-left: 2%;
+}
+#resultado {
 }
 footer {
-	background-color: blue;
+	/*background-color: blue;*/
+	clear: both;
 }
 footer p {
 	text-align: center;
