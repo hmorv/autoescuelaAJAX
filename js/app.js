@@ -1,216 +1,195 @@
-var datos;
-function crear_formulario(d) {
-
+function cargar_cuestionario(xml) {
+	/* esta funcion hace una llamada AJAX al xml y genera el cuestionario en el HTML */
+	$.ajax({
+		url: xml,
+		type: 'GET',
+		dataType: 'xml',
+		success: function(data) {
+			$xml = $(data);
+			$preguntas = $xml.find("pregunta");
+			$("section").append(generar_bloques_preguntas($preguntas));
+		}
+	})
+	.done(function() {
+		console.log("success");
+	})
+	.fail(function() {
+		console.log("error");
+	})
+	.always(function() {
+		console.log("complete");
+	});
 }
-// function generar_pregunta(numPregunta, textoPregunta, arrayPreguntas) {
-// 	var r = "<p> Pregunta" + (i+1) + "<br />" + 
-// }
 
 function cargar_respuestas_ajax(xml, r) {
-		$.ajax({
-			url: xml,
-			type: 'GET',
-			dataType: 'xml',
-			async: false,
-			success: function(data) {
-			//var xmlDoc = $.parseXML(data);
+	/* también hace llamada pero desactivando el asíncrono
+	esta llamada obtiene las respuestas.
+	Se desactiva el asíncrono porque si no no me deja guardar las respuestas */
+	$.ajax({
+		url: xml,
+		type: 'GET',
+		dataType: 'xml',
+		async: false,
+		success: function(data) {
 			$xml = $(data);
-			$p = $xml.find("test");
 			$respuestas = $xml.find("RespuestaOK");
-			//console.log($p);
-			console.log($respuestas);
-			//return $respuestas;
-			var result = [];
 			for (var i = 0; i < $respuestas.length; i++) {
 				r.push($respuestas[i].textContent);
 			}
-			
 		}
 	})
-		.done(function() {
-			console.log("success");
-		})
-		.fail(function() {
-			console.log("error");
-		})
-		.always(function() {
-			console.log("complete");
-			return r;
-		});
+	.done(function() {
+		console.log("success");
+	})
+	.fail(function() {
+		console.log("error");
+	})
+	.always(function() {
+		console.log("complete");
+		return r;
+	});
+}
 
-	}
-function generar_bloques_preguntas($preguntas, destino) {
+function generar_bloques_preguntas($preguntas) {
+	/* genera una cadena con el código HTML del cuestionario y lo devuelve */
+	var bloque_preguntas = "";
 	if($preguntas.length > 0) {
-		var result = "";
 		for(var i = 0; i < $preguntas.length; i++ ) {
-			result += "<h3> Pregunta" + (i+1) + "</h3>"
-			result += "<h4>" + $preguntas[i].childNodes[1].textContent + "</h4>";
-			result += "<ul class='.opcion'><li><label><input type='radio' name='"+i+"' value='"+(i+1)+"'>" + "<span class='opcion'>" + $preguntas[i].childNodes[3].textContent + "</span></label></li>";
-			result += "<li><label><input type='radio' name='"+i+"' value='"+(i+1)+"'>" + "<span class='opcion'>" + $preguntas[i].childNodes[5].textContent + "</span></label></li>";
-			result += "<li><label><input type='radio' name='"+i+"' value='"+(i+1)+"'>" + "<span class='opcion'>" + $preguntas[i].childNodes[7].textContent + "</span></label></li></ul>";
+			bloque_preguntas += "<h3> Pregunta" + (i+1) + "</h3>"
+			bloque_preguntas += "<h4>" + $preguntas[i].childNodes[1].textContent + "</h4>";
+			bloque_preguntas += "<ul class='opcion'><li><label><input type='radio' name='"+i+"' value='"+(i+1)+"'>" + "<span>" + $preguntas[i].childNodes[3].textContent + "</span></label></li>";
+			bloque_preguntas += "<li><label><input type='radio' name='"+i+"' value='"+(i+1)+"'>" + "<span>" + $preguntas[i].childNodes[5].textContent + "</span></label></li>";
+			bloque_preguntas += "<li><label><input type='radio' name='"+i+"' value='"+(i+1)+"'>" + "<span>" + $preguntas[i].childNodes[7].textContent + "</span></label></li></ul>";
 		}
-		return result;
+		
+	} else {
+		bloque_preguntas = "<h1>ERROR! ¿No hay preguntas?</h1>";
 	}
+	return bloque_preguntas;
 }
 
-function comprobar_respuesta(pregunta, respuesta) {
-	return pregunta == respuesta;
+function son_iguales(pregunta, respuesta) {
+	// compara respuesta usuario con la del xml
+	return pregunta === respuesta;
 }
 
-function get_respuestas(origen) {
-	
-	/*var r = "";
-	for(var i = 0; i < 30; i++) {
-		r += "0";
-	}*/
-	var result = [];//r.split("");
+function obtener_respuestas(origen) {
+	/* Esta funcion obtiene las respuestas en funcion del parametro origen:
+	- local, las obtiene del HTML manipulado por el usuario
+	- remoto, las obtiene del xml
+	las devuelve en formato array */
+	var respuestas = [];
 	switch (origen) {
 		case "local":
-			//for(var i = 0; i < $("input").length; i++) {
-				$(":radio").each(function(index, el) {
-					if($(this).is(':checked'))
-						result.push('Respuesta' + $(this).val());
-				});
-				return result;
-			//}
+		$(".opcion").each(function(index, el) {
+			//recorremos toso los ul
+			var grupo = this.childNodes;
+			for(var i = 0; i < grupo.length; i++) {
+				/*recorremos uno a uno los 3 input de cada bloque buscando 
+				si hay uno seleccionado: si no encuentra ninguno, devuelve un 0
+				*/
+				var opcion_actual = grupo[i].childNodes[0].childNodes[0];
+
+				if($(opcion_actual).is(':checked')) {
+					respuestas.push('Respuesta' + (i+1));
+					break;
+				}
+				if(!$(opcion_actual).is(':checked') && i == 2)
+					respuestas.push('0');
+			}
+		});
 		break;
 		case "remoto":
-			cargar_respuestas_ajax('xml/datos.xml', result);
-			//var $obj = cargar_respuestas_ajax('xml/datos.xml');
-			/*for (var i = 0; i < $obj.length; i++) {
-				result.push($obj[i]);
-			}*/
-			return result;
+		//cargamos las respuestas desde el xml
+		cargar_respuestas_ajax('xml/datos.xml', respuestas);
 		break;
 		default:
-			// statements_def
-			return [-1];
-			break;
+		break;
+	}
+	return respuestas;
+}
+
+function marcar(str, indice) {
+	//marca las respuestas en verde o en rojo, en funcion de str
+	var selector = ".opcion:eq("+indice+")";
+	switch (str) {
+		case 'verde':
+		$(selector).css({
+			color: 'green',
+		});
+		break;
+		case 'rojo':
+		$(selector).css({
+			color: 'red',
+		});
+		break;
+		default:
+		break;
+	}
+}
+
+function corregir_test() {
+	var aciertos = 0;
+	//obtenemos las respuestas del usuario y las del xml
+	var respuestas_usuario = obtener_respuestas("local");
+	var respuestas_original = obtener_respuestas("remoto");
+	
+	/*aprobado se corresponde con el porcentaje que queramos establecer de aciertos 
+	sobre el cuestionario original*/
+	var aprobado = parseInt((respuestas_original.length * 90) / 100);
+	
+	for(var i = 0; i < respuestas_original.length; i++) {
+		if(son_iguales(respuestas_usuario[i], respuestas_original[i])) {
+			aciertos++;
+			marcar('verde', i);
+		} else {
+			marcar('rojo', i);
 		}
 	}
-	function marcar(str, indice) {
-		var selector = ".opcion:checked:eq("+indice+")";
-		switch (str) {
-			case 'verde':
-				$(selector).css({
-					color: 'green',
-				});
-				break;
-			case 'rojo':
-			$(selector).css({
-					color: 'red',
-				});
-				// statements_1
-				break;
-			default:
-				// statements_def
-				break;
-		}
-	}
+	if(aciertos > aprobado)
+		mostrar_mensaje("#resultado", "<h2>Aprobado! Has acertado "+ aciertos + " preguntas</h2>");
+	else
+		mostrar_mensaje("#resultado", "<h2>Suspendido! Has acertado "+ aciertos + " preguntas</h2>");
 
-	function corregir_test() {
-		var result = 0;
-		var respuestas_usuario = get_respuestas("local");
-		var respuestas_original = get_respuestas("remoto");
-		for(var i = 0; i < respuestas_original.length; i++) {
-			if(comprobar_respuesta(respuestas_usuario[i], respuestas_original[i])) {
-				result++;
-				marcar('verde', i+1);
-			} else {
-				marcar('rojo', i+1);
-			}
-		}
-		if(result > 1) 
-			mostrar_mensaje("#resultado", "<h2>Aprobado!</h2>");
-		else
-			mostrar_mensaje("#resultado", "<h2>Suspendido!</h2>");
+}
 
-	}
+function mostrar_mensaje(destino, mensaje) {
+	//destino es un selector id. borra mensajes previos
+	$(destino).empty;
+	$(destino).html(mensaje);
+}
 
-	function cargar_preguntas(xml) {
-		$.ajax({
-			url: xml,
-			type: 'GET',
-			dataType: 'xml',
-			success: function(data) {
-			//var xmlDoc = $.parseXML(data);
-			$xml = $(data);
-			$p = $xml.find("test");
-			$preguntas = $xml.find("pregunta");
-			//console.log($p);
-			console.log($preguntas);
-			//return $preguntas;
-			/*for(var i = 0; i < $preguntas.length; i++) {
-				$("section").append("<p> Pregunta" + (i+1) + $preguntas[i].childNodes[1].textContent + "</p>");
-				$("section").append("<p><label><input type='radio' name='"+i+"' value=''>" + $preguntas[i].childNodes[3].textContent + "</label></p>");
-				$("section").append("<p><label><input type='radio' name='"+i+"' value=''>" + $preguntas[i].childNodes[5].textContent + "</label></p>");
-				$("section").append("<p><label><input type='radio' name='"+i+"' value=''>" + $preguntas[i].childNodes[7].textContent + "</label></p>");
-			}*/
-			var test = generar_bloques_preguntas($preguntas, '#section');
-			$("section").append(test);
-			//$("footer").append( $preguntas.text() );
+$(document).ready(function() {
+	//ocultamos el boton corregir
+	$("#corregir").hide();
 
-		}
-	})
-		.done(function() {
-			console.log("success");
-		})
-		.fail(function() {
-			console.log("error");
-		})
-		.always(function() {
-			console.log("complete");
+	$("#inicio").click(function(event) {
+		$("section").empty();
+
+		$(this).css({
+			display: 'none'
+		});
+		$("#corregir").css({
+			display: 'block'
+		});
+		$("input").prop({
+			disabled: false
 		});
 
-	}
+		mostrar_mensaje("#resultado","<h1>Vamos, suerte!</h1>");
+		cargar_cuestionario('xml/datos.xml');
+	});
 
-	function mostrar_mensaje(destino, mensaje) {
-		//destino es una id
-		$("#resultado").empty;
-		$("#resultado").html(mensaje);
-	}
-
-
-
-
-	$(document).ready(function() {
-		$("#corregir, #anterior, #siguiente").hide();
-		$("#inicio").click(function(event) {
-			$("section").empty();
-			mostrar_mensaje("#resultado","<h1>Vamos, suerte!</h1>");
-			cargar_preguntas('xml/datos.xml');
-			$(this).css({
-				display: 'none',
-			});
-			$("#corregir").css({
-				display: 'block',
-			});
-			$("input").prop({
-				disabled: false,
-			});
+	$("#corregir").click(function(event) {
+		$("input").prop({
+			disabled: true
 		});
-		$("#corregir").click(function(event) {
-			$("input").prop({
-				disabled: true,
-			});
-
-			mostrar_mensaje("#resultado","<h1>Correción de test</h1>");
-			corregir_test();
-			//mostrar errores
-			//dar nota
-			$(this).css({
-				display: 'none',
-			});
-			$("#inicio").css({
-				display: 'block',
-			});
-			
-
+		corregir_test();
+		$(this).css({
+			display: 'none',
 		});
-		$("#anterior").click(function(event) {
-		//cargar anterior
+		$("#inicio").css({
+			display: 'block',
+		});
 	});
-		$("#siguiente").click(function(event) {
-		//cargar siguiente
-	});
-	});
+});

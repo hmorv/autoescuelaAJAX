@@ -4,393 +4,246 @@
 
 	<pregunta>
 		<enunciado>¿Qué alumbrado llevará encendido una motocicleta durante el día?</enunciado>
-
 		<Respuesta1>El de corto alcance o cruce</Respuesta1>
-
 		<Respuesta2>El de posición o el de corto alcance</Respuesta2>
-
 		<Respuesta3>Ninguno</Respuesta3>
-		
 		<RespuestaOK>Respuesta1</RespuestaOK>
-
-    <imagen>1.jpg</imagen></pregunta>
-
+	</pregunta>
 
 	<pregunta>
 		<enunciado>¿Puede realizar un cambio de sentido en un lugar donde esté prohibido adelantar?</enunciado>
-
 		<Respuesta1>Sí, excepto entre la puesta y la salida de sol, porque disminuye la visibilidad.</Respuesta1>
-
 		<Respuesta2>No, salvo que el cambio de sentido esté expresamente autorizado.</Respuesta2>
-
 		<Respuesta3>Sí, cuando la circulación en sentido contrario lo permita</Respuesta3>
-		
 		<RespuestaOK>Respuesta2</RespuestaOK>
-	<imagen>2.jpg</imagen></pregunta>
-
+	</pregunta>
 
 	<pregunta>
 		<enunciado>En una autopista conduciendo un camión de 3.000 Kg. de M.M.A., ¿qué distancia es obligatorio dejar con el vehículo que va delante?</enunciado>
-
 		<Respuesta1> 100 metros.</Respuesta1>
-
 		<Respuesta2>50 metros.</Respuesta2>
-
 		<Respuesta3>La distancia de seguridad.</Respuesta3>
-		
 		<RespuestaOK>Respuesta3</RespuestaOK>
-	<imagen></imagen></pregunta>
-
+	</pregunta>
 
 	<pregunta>
 		<enunciado>¿Dónde está permitido que viaje un niño que no alcance los 135 centímetros de estatura?</enunciado>
-
 		<Respuesta1>En cualquiera de los asientos traseros utilizando el cinturón para adultos.</Respuesta1>
-
 		<Respuesta2> En un asiento delantero o trasero, utilizando siempre el cinturón de seguridad para adultos.</Respuesta2>
-
 		<Respuesta3>En un asiento delantero o trasero utilizando siempre un dispositivo de retención homologado en función de su talla y peso.</Respuesta3>
-		
 		<RespuestaOK>Respuesta3</RespuestaOK>
-	<imagen>4.jpg</imagen></pregunta>
-
+	</pregunta>
 
 	<pregunta>
 		<enunciado>Con esta señalización, ¿a qué velocidad debe circular?</enunciado>
-
 		<Respuesta1>Obligatoriamente a 30 km/h.</Respuesta1>
-
 		<Respuesta2>Al menos a 30 km/h.</Respuesta2>
-
 		<Respuesta3>A 30 km/h, como recomendación, durante el tramo que subsista el peligro.</Respuesta3>
-		
 		<RespuestaOK>Respuesta3</RespuestaOK>
-	<imagen>5.jpg</imagen></pregunta>
+	</pregunta>
 
 
 	<pregunta>
 		<enunciado>Una línea blanca continua sobre la calzada, sensiblemente más ancha que en el caso general...</enunciado>
-
 		<Respuesta1>indica la existencia de un carril especial.</Respuesta1>
-
 		<Respuesta2>sirve para delimitar, únicamente, los carriles bus.</Respuesta2>
-
 		<Respuesta3>indica el borde de la calzada.</Respuesta3>
-		
 		<RespuestaOK>Respuesta1</RespuestaOK>
-	<imagen>6.jpg</imagen></pregunta>
+	</pregunta>
 
 
 	<pregunta>
 		<enunciado>El seguro obligatorio, ¿cubre los daños en la persona del conductor del vehículo asegurado?</enunciado>
-
 		<Respuesta1>Sí, en todo caso.</Respuesta1>
-
 		<Respuesta2>Sí, salvo cuando el conductor es el tomador del seguro.</Respuesta2>
-
 		<Respuesta3>No.</Respuesta3>
-		
 		<RespuestaOK>Respuesta3</RespuestaOK>
-	<imagen></imagen></pregunta>
-
+	</pregunta>
 
 	<pregunta>
 		<enunciado>La mayor parte de las víctimas mortales por accidente de circulación se producen en...</enunciado>
-
 		<Respuesta1>vías interurbanas.</Respuesta1>
-
 		<Respuesta2>vías urbanas.</Respuesta2>
-
 		<Respuesta3>travesías.</Respuesta3>
-		
 		<RespuestaOK>Respuesta1</RespuestaOK>
-	<imagen>8.jpg</imagen></pregunta>
-
+	</pregunta>
 
 	<pregunta>
 		<enunciado>¿Cuántos espejos retrovisores tienen que llevar instalados las motocicletas?</enunciado>
-
 		<Respuesta1>Obligatoriamente uno en el lado derecho, pero pueden llevar dos.</Respuesta1>
-
 		<Respuesta2>Siempre deben llevar dos espejos, uno en cada lado.</Respuesta2>
-
 		<Respuesta3>Un espejo exterior izquierdo si no superan los 100 km/h y dos, uno en cada lado, si la velocidad es mayor.</Respuesta3>
-		
 		<RespuestaOK>Respuesta3</RespuestaOK>
-	<imagen></imagen></pregunta>
-
+	</pregunta>
 
 	<pregunta>
 		<enunciado>¿Está permitida la circulación de animales por una carretera convencional?</enunciado>
-
 		<Respuesta1>Sí, únicamente cuando no exista vía pecuaria.</Respuesta1>
-
 		<Respuesta2>NO.</Respuesta2>
-
 		<Respuesta3>Sí, excepto cuando circulen en rebaño.</Respuesta3>
-		
 		<RespuestaOK>Respuesta1</RespuestaOK>
-	<imagen>10.jpg</imagen></pregunta>
-
+	</pregunta>
 
 	<pregunta>
 		<enunciado>El conductor debe...</enunciado>
-
 		<Respuesta1>observar únicamente a los conductores que se aproximan por detrás.</Respuesta1>
-
 		<Respuesta2>mirar siempre hacia adelante.</Respuesta2>
-
 		<Respuesta3>observar constantemente lo que sucede en la vía.</Respuesta3>
-		
 		<RespuestaOK>Respuesta3</RespuestaOK>
-	<imagen></imagen></pregunta>
+	</pregunta>
 
 
 	<pregunta>
 		<enunciado>¿Cuál es la tasa de alcohol máxima permitida a un conductor novel?</enunciado>
-
 		<Respuesta1>0,25 miligramos de alcohol por litro de aire espirado.</Respuesta1>
-
 		<Respuesta2>0,3 miligramos de alcohol por litro de aire espirado.</Respuesta2>
-
 		<Respuesta3>0,15 miligramos de alcohol por litro de aire espirado.</Respuesta3>
-		
 		<RespuestaOK>Respuesta3</RespuestaOK>
-	<imagen></imagen></pregunta>
-
+	</pregunta>
 
 	<pregunta>
 		<enunciado>Cuando un vehículo accidentado comienza a arder, ¿qué se debe hacer primero?</enunciado>
-
 		<Respuesta1>Apagar el fuego.</Respuesta1>
-
 		<Respuesta2>Sacar rápidamente a los heridos.</Respuesta2>
-
 		<Respuesta3>Ir a buscar ayuda.</Respuesta3>
-		
 		<RespuestaOK>Respuesta2</RespuestaOK>
-	<imagen></imagen></pregunta>
-
+	</pregunta>
 
 	<pregunta>
 		<enunciado>En esta situación, ¿qué debe hacer si va a girar a la izquierda?</enunciado>
-
 		<Respuesta1>Continuar, obedeciendo al semáforo de la derecha.</Respuesta1>
-
 		<Respuesta2>Detenerse, obedeciendo al semáforo situado a la izquierda.</Respuesta2>
-
 		<Respuesta3>Sólo detenerse si hay peatones cruzando.</Respuesta3>
-		
 		<RespuestaOK>Respuesta2</RespuestaOK>
-	<imagen>14.jpg</imagen></pregunta>
-
+	</pregunta>
 
 	<pregunta>
 		<enunciado>¿Está permitido colocar los triángulos de preseñalización de peligro a menos de 50 metros del vehículo averiado?</enunciado>
-
 		<Respuesta1>Sí, a esa distancia ya son visibles.</Respuesta1>
-
 		<Respuesta2>No, deben estar al menos a 100 metros.</Respuesta2>
-
 		<Respuesta3>No.</Respuesta3>
-		
 		<RespuestaOK>Respuesta3</RespuestaOK>
-	<imagen>15.jpg</imagen></pregunta>
-
+	</pregunta>
 
 	<pregunta>
 		<enunciado>Para entrar en una autopista, ¿a qué velocidad debe circular?</enunciado>
-
 		<Respuesta1>A la máxima velocidad permitida en la autopista.</Respuesta1>
-
 		<Respuesta2>Siempre muy despacio para entrar con seguridad.</Respuesta2>
-
-		<Respuesta3>A la velocidad adecuada que permita incorporarse con seguridad.</Respuesta3>
-		
+		<Respuesta3>A la velocidad adecuada que permita incorporarse con seguridad.</Respuesta3>	
 		<RespuestaOK>Respuesta3</RespuestaOK>
-	<imagen></imagen></pregunta>
-
+	</pregunta>
 
 	<pregunta>
 		<enunciado>¿Qué es una detención?</enunciado>
-
 		<Respuesta1>La inmovilización del vehículo por necesidades de la circulación.</Respuesta1>
-
 		<Respuesta2>Una parada por cualquier causa.</Respuesta2>
-
 		<Respuesta3>Un estacionamiento sin bajarse del vehículo.</Respuesta3>
-		
 		<RespuestaOK>Respuesta1</RespuestaOK>
-	<imagen></imagen></pregunta>
-
+	</pregunta>
 
 	<pregunta>
 		<enunciado>Esta señal indica peligro por la proximidad de...</enunciado>
-
 		<Respuesta1>una vía en mal estado.</Respuesta1>
-
 		<Respuesta2>un badén en la vía.</Respuesta2>
-
 		<Respuesta3>un resalto en la vía.</Respuesta3>
-		
 		<RespuestaOK>Respuesta2</RespuestaOK>
-	<imagen></imagen></pregunta>
-
+	</pregunta>
 
 	<pregunta>
 		<enunciado>La velocidad adecuada está siempre...</enunciado>
-
 		<Respuesta1>por debajo de la velocidad mínima.</Respuesta1>
-
 		<Respuesta2>por encima de la velocidad máxima y por debajo de la mínima.</Respuesta2>
-
 		<Respuesta3>por encima de la velocidad mínima y por debajo de la máxima.</Respuesta3>
-		
 		<RespuestaOK>Respuesta3</RespuestaOK>
-	<imagen>19.jpg</imagen></pregunta>
-
+	</pregunta>
 
 	<pregunta>
 		<enunciado>¿Tiene alguna obligación cuando su vehículo va a ser adelantado?</enunciado>
-
 		<Respuesta1>Sí, señalizar con el intermitente derecho para indicar que puede realizar la maniobra con seguridad.</Respuesta1>
-
 		<Respuesta2>No, la responsabilidad es del vehículo que adelanta.</Respuesta2>
-
 		<Respuesta3>Sí, ceñirse al borde derecho de la calzada para facilitar la maniobra.</Respuesta3>
-		
 		<RespuestaOK>Respuesta3</RespuestaOK>
-	<imagen></imagen></pregunta>
-
+	</pregunta>
 
 	<pregunta>
 		<enunciado>Entre otros efectos, el consumo de alcohol...</enunciado>
-
 		<Respuesta1>mejora la atención si se toma en pequeñas cantidades.</Respuesta1>
-
 		<Respuesta2>aumenta las distracciones al volante.</Respuesta2>
-
 		<Respuesta3>ayuda a mantener la atención al volante.</Respuesta3>
-		
 		<RespuestaOK>Respuesta2</RespuestaOK>
-	<imagen>21.jpg</imagen></pregunta>
+	</pregunta>
 
 
 	<pregunta>
 		<enunciado>El funcionamiento del airbag, ¿puede llegar a ser peligroso en un accidente?</enunciado>
-
 		<Respuesta1>Sí, siempre.</Respuesta1>
-
 		<Respuesta2>Sí, si no se lleva puesto el cinturón de seguridad.</Respuesta2>
-
 		<Respuesta3>No.</Respuesta3>
-		
 		<RespuestaOK>Respuesta2</RespuestaOK>
-	<imagen></imagen></pregunta>
-
+	</pregunta>
 
 	<pregunta>
 		<enunciado>¿Cuál debe ser su comportamiento al ceder el paso?</enunciado>
-
 		<Respuesta1>Detenerse en las intersecciones si se acerca otro vehículo.</Respuesta1>
-
 		<Respuesta2>Parar y comprobar si otro usuario de la vía tiene prioridad.</Respuesta2>
-
 		<Respuesta3>No obligar al vehículo que tiene prioridad a modificar bruscamente su trayectoria o velocidad.</Respuesta3>
-		
 		<RespuestaOK>Respuesta3</RespuestaOK>
-	<imagen>23.jpg</imagen></pregunta>
-
+	</pregunta>
 
 	<pregunta>
 		<enunciado>¿A qué velocidad máxima tiene permitido circular una autocaravana en una autovía?</enunciado>
-
 		<Respuesta1>A 100 km/h.</Respuesta1>
-
 		<Respuesta2>A 90 km/h.</Respuesta2>
-
 		<Respuesta3>A 100 km/h, pudiendo superarla en 20 km/h para adelantar.</Respuesta3>
-		
 		<RespuestaOK>Respuesta1</RespuestaOK>
-	<imagen>24.jpg</imagen></pregunta>
-
+	</pregunta>
 
 	<pregunta>
 		<enunciado>La fatiga, ¿provoca lentitud y falta de precisión en los movimientos?</enunciado>
-
 		<Respuesta1>No, la fatiga sólo produce calambres.</Respuesta1>
-
 		<Respuesta2>No.</Respuesta2>
-
 		<Respuesta3>Sí, por lo cual la conducción se hace más peligrosa.</Respuesta3>
-		
 		<RespuestaOK>Respuesta3</RespuestaOK>
-	<imagen>25.jpg</imagen></pregunta>
-
+	</pregunta>
 
 	<pregunta>
 		<enunciado>La tasa máxima de alcoholemia permitida en sangre para conductores profesionales es...</enunciado>
-
 		<Respuesta1>0,30 gramos por litro.</Respuesta1>
-
 		<Respuesta2>0,30 miligramos por litro.</Respuesta2>
-
 		<Respuesta3>0,50 gramos por litro.</Respuesta3>
-		
 		<RespuestaOK>Respuesta1</RespuestaOK>
-	<imagen></imagen></pregunta>
-
+	</pregunta>
 
 	<pregunta>
 		<enunciado>Los accidentes de tráfico generan...</enunciado>
-
 		<Respuesta1>un enorme impacto económico, solamente.</Respuesta1>
-
 		<Respuesta2>daños materiales y costes sanitarios, administrativos y humanos.</Respuesta2>
-
 		<Respuesta3>daños materiales y costes humanos, únicamente.</Respuesta3>
-		
 		<RespuestaOK>Respuesta2</RespuestaOK>
-	<imagen></imagen></pregunta>
-
+	</pregunta>
 
 	<pregunta>
 		<enunciado>El efecto submarino se produce cuando...</enunciado>
-
 		<Respuesta1>el apoyacabezas está mal regulado.</Respuesta1>
-
 		<Respuesta2>el cinturón de seguridad no es capaz de retener adecuadamente durante un accidente y el cuerpo se desliza por debajo de él.</Respuesta2>
-
 		<Respuesta3>la distancia con el airbag es incorrecta.</Respuesta3>
-		
 		<RespuestaOK>Respuesta2</RespuestaOK>
-	<imagen></imagen></pregunta>
-
+	</pregunta>
 
 	<pregunta>
 		<enunciado>Al auxiliar a una víctima de un accidente de tráfico, ¿debe darle alimentos o bebidas?</enunciado>
-
 		<Respuesta1>Sí, si lo piden.</Respuesta1>
-
 		<Respuesta2>No.</Respuesta2>
-
 		<Respuesta3>Alimentos no, pero bebidas sí.</Respuesta3>
-		
 		<RespuestaOK>Respuesta2</RespuestaOK>
-	<imagen>29.jpg</imagen></pregunta>
-
+	</pregunta>
 
 	<pregunta>
 		<enunciado>Fuera de poblado, ¿qué separación lateral debe dejar una motocicleta al adelantar un camión?</enunciado>
-
 		<Respuesta1>Una distancia proporcional a la velocidad a la que circule.</Respuesta1>
-
 		<Respuesta2>Un espacio no inferior a 1,50 metros.</Respuesta2>
-
 		<Respuesta3>Una separación que considere segura en función de las circunstancias del momento.</Respuesta3>
-		
 		<RespuestaOK>Respuesta2</RespuestaOK>
-	<imagen></imagen></pregunta>
-
+	</pregunta>
 
 </cuestionario>
