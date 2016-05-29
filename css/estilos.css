@@ -5,62 +5,130 @@
    margins and font sizes of headings, and so on. The general reasoning behind this was discussed in a May 2007 post,
    if you're interested. Reset styles quite often appear in CSS frameworks, and the original "meyerweb reset" found its way 
    into Blueprint, among others."
-*/
-a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
+   */
+   a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
 
-/* html element 62.5% font-size for REM use */
-html {
-	font-size:62.5%;
-}
-body {
-	background-color: #333;
-}
-h1 {
-	font-size: 5rem;
-	text-align: center;
-	color: #ccc;
-	padding: 1rem;
-}
+   @import url(https://fonts.googleapis.com/css?family=Oswald);
 
-header, nav, article, footer {
-	padding: 1rem;
-}
-header {
-	background-color: green;
-}
+   /* html element 62.5% font-size for REM use */
+   html {
+   	font-size:62.5%;
+   }
+   body {
+   	background-color: #333;
+   	font-family: 'Oswald', sans-serif;
+   	background-image: url(../img/background-min.jpg);
+   	background-size: 50%;
+   	background-repeat: repeat;
+   	/* background-position: left; */
+   }
+   h1 {
+   	color: #fff;
+   	text-align: center;
+   	padding: 2rem 1rem;
+   	font-size: 4rem;
+   	text-transform: uppercase;
+   	font-weight: bold;
+   }
 
-nav {
-	background-color: orange;
-}
+   h3 {
+   	font-size: 2rem;
+   	text-align: left;
+   	text-transform: uppercase;
+   	font-weight: bolder;
+   	margin-bottom: 1rem;
+   }
+   h4 {
+   	font-size: 2rem;
+   	text-align: left;
+   	margin-top: 1rem;
+   	width: 90%;
+   	margin: 0 auto;
+   	color: #d2f5fb;
+   }
+   section {
+   	position: relative;
+   }
+   section ul {
+   	font-size: 1.7rem;
+   	margin: 1rem 2rem;
+   }
+   section ul li {
+   	margin-top: 1rem;
+   	margin-bottom: 1rem;
+   }
+   section ul li span {
+   	font-size: 2.3rem;
+   	margin-top: 1rem;
+   	margin-bottom: 1rem;
+   }
+   #menu ul li {
+   	width: 50%;
+   	margin: 2rem auto;
+   	text-align: center;
+   	height: auto;
+   	padding: 1rem 1rem;
+   	border-radius: 6px;
+   	font-size: 3rem;
+   	display: block;
+   	overflow: hidden;
 
-nav ul {
-	text-align: center;
-}
-nav ul li {
-	font-size: 3rem;
-	display: inline;
-}
-nav ul li:after {
-	content: " |";
-}
-nav ul li:hover {
-	color: #FF0000;
-}
+   	background-color: #026873;
+   	background-image: linear-gradient(90deg, rgba(255,255,255,.07) 50%, transparent 50%),
+   	linear-gradient(90deg, rgba(255,255,255,.13) 50%, transparent 50%),
+   	linear-gradient(90deg, transparent 50%, rgba(255,255,255,.17) 50%),
+   	linear-gradient(90deg, transparent 50%, rgba(255,255,255,.19) 50%);
+   	background-size: 13px, 29px, 37px, 53px;
+   }
 
+   #corregir,
+   #reiniciar,
+   #anterior,
+   #siguiente {
+   	display: none;
+   }
+   #menu ul li:hover {
+   	background-color: rgb(182, 50, 50);
+   	color: rgb(56, 83, 90);
+   	cursor: pointer;
+   	-webkit-transition: background-color, color 1.6s; /* Safari */
+   	transition: background-color, color 1.6s;
 
+   	-webkit-transition: background-color .6s; /* Safari */
+   	transition: background-color .6s;
 
+   }
+   #resultado {
+   	margin: 1rem auto;
+   	width: 60%;
+   	font-size: 3rem;
+   	color: #fff;
+   }
+   
+   h3,
+   h4 {
+   	color: #000;
+   }
+   .opcion label {
+   	font-weight: bolder;
+   }
+   img {
+   	width: 100%;
+   	margin-top: 5%;
+   	margin-bottom: 5%;
+   	border: 1px solid #000;
+   }
 
-article {
-	background-color: pink;
-}
-footer {
-	background-color: blue;
-}
-footer p {
-	text-align: center;
-	font-size: 2rem;
-}
-nav {
-	margin: 0 auto;
-	width: 80%;
-}
+   footer p {
+   	text-align: center;
+   	font-size: 1.4rem;
+   	font-weight: bolder;
+   	color: rgb(153, 153, 153);
+   }
+
+   @media screen and (min-width: 400px) {
+   	img {
+   		width: 40%;
+   		margin-left: 10%;
+   	}
+   }
