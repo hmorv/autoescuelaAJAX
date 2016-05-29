@@ -55,11 +55,13 @@ function generar_bloques_preguntas($preguntas) {
 	var bloque_preguntas = "";
 	if($preguntas.length > 0) {
 		for(var i = 0; i < $preguntas.length; i++ ) {
-			bloque_preguntas += "<h3> Pregunta" + (i+1) + "</h3>"
+			bloque_preguntas += "<h3> Pregunta - " + (i+1) + "</h3>"
 			bloque_preguntas += "<h4>" + $preguntas[i].childNodes[1].textContent + "</h4>";
 			bloque_preguntas += "<ul class='opcion'><li><label><input type='radio' name='"+i+"' value='"+(i+1)+"'>" + "<span>" + $preguntas[i].childNodes[3].textContent + "</span></label></li>";
 			bloque_preguntas += "<li><label><input type='radio' name='"+i+"' value='"+(i+1)+"'>" + "<span>" + $preguntas[i].childNodes[5].textContent + "</span></label></li>";
 			bloque_preguntas += "<li><label><input type='radio' name='"+i+"' value='"+(i+1)+"'>" + "<span>" + $preguntas[i].childNodes[7].textContent + "</span></label></li></ul>";
+			if($preguntas[i].childNodes[11].textContent != "")
+				bloque_preguntas += "<img src='img/" + $preguntas[i].childNodes[11].textContent + "'></img>";
 		}
 		
 	} else {

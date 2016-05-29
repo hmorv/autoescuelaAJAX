@@ -33,7 +33,10 @@
 
    h3 {
    	font-size: 2rem;
-   	text-align: center;
+   	text-align: left;
+   	text-transform: uppercase;
+   	font-weight: bolder;
+   	margin-bottom: 1rem;
    }
    h4 {
    	font-size: 2rem;
@@ -49,6 +52,15 @@
    section ul {
    	font-size: 1.7rem;
    	margin: 1rem 2rem;
+   }
+   section ul li {
+   	margin-top: 1rem;
+   	margin-bottom: 1rem;
+   }
+   section ul li span {
+   	font-size: 2.3rem;
+   	margin-top: 1rem;
+   	margin-bottom: 1rem;
    }
    #menu ul li {
    	width: 50%;
@@ -100,6 +112,12 @@
    .opcion label {
    	font-weight: bolder;
    }
+   img {
+   	width: 100%;
+   	margin-top: 5%;
+   	margin-bottom: 5%;
+   	border: 1px solid #000;
+   }
 
    footer p {
    	text-align: center;
@@ -107,111 +125,10 @@
    	font-weight: bolder;
    	color: rgb(153, 153, 153);
    }
-/*   h1 {
-   	font-size: 5rem;
-   	text-align: center;
-   	color: #ccc;
-   	padding: 1rem;
-   }
 
-   header, nav, article, footer {
-   	padding: 1rem;
-   }
-   header {
-   }
-
-   nav {
-   }
-
-   nav ul {
-   	text-align: center;
-   }
-   nav ul li {
-   	font-size: 3rem;
-   	display: inline;
-   }
-   nav ul li:after {
-   	content: " |";
-   }
-   nav ul li:hover {
-   	color: #FF0000;
-   }
-   #corregir,
-   #anterior,
-   #siguiente {
-   	display: none;
-   }
-
-   article {
-   }
-   section {
-   	width: 58%;
-   	background-color: #999;
-   	float: left;
-   	margin-left: 2%;
-   	margin-right: 2%;
-   	padding: 4% 5%;
-
-   }
-   section p {
-   	font-size: 2rem;
-   	margin-bottom: 1rem;
-   }
-   section input {
-   	margin-bottom: 2rem;
-   }
-   aside {
-   	width: 25%;
-   	background-color: #446644;
-   	float: left;
-   	margin-left: 2%;
-   }
-   #resultado {
-   }
-   footer {
-   	clear: both;
-   }
-   footer p {
-   	text-align: center;
-   	font-size: 2rem;
-   }
-   nav {
-   	margin: 0 auto;
-   	width: 80%;
-   }
-
-   @media screen and (max-width: 700px) {
-   	section {
-   		width: 96%;
-   		background-color: #999;
-   		float: left;
-   		padding: 4% 1%;
-
+   @media screen and (min-width: 400px) {
+   	img {
+   		width: 40%;
+   		margin-left: 10%;
    	}
-   	section p {
-   		font-size: 2rem;
-   		margin-bottom: 1rem;
-   	}
-   	section input {
-   		margin-bottom: 2rem;
-   	}
-   	aside {
-   		width: 100%;
-   		background-color: #446644;
-   		float: left;
-   		margin-left: 2%;
-   	}
-   	#resultado {
-   	}
-   	footer {
-   		clear: both;
-   	}
-   	footer p {
-   		text-align: center;
-   		font-size: 2rem;
-   	}
-   	header h1 {
-   		overflow: hidden;
-		font-size: 1rem;
-   	}
-   }*/
+   }
