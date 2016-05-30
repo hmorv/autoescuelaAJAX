@@ -112,7 +112,7 @@ function obtener_respuestas(origen) {
 }
 
 function marcar(str, indice) {
-	//marca las respuestas en verde o en rojo, en funcion de str
+	//marca las respuestas en verde o en rojo, en funcion del parámetro str
 	var selector = ".opcion:eq("+indice+")";
 	switch (str) {
 		case 'verde':
