@@ -5,6 +5,8 @@
    margins and font sizes of headings, and so on. The general reasoning behind this was discussed in a May 2007 post,
    if you're interested. Reset styles quite often appear in CSS frameworks, and the original "meyerweb reset" found its way 
    into Blueprint, among others."
+
+   ** El código a continuación permite resetear todos los estilos y evitar que la visualización varíe de un navegador a otro **
    */
    a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
 
@@ -14,6 +16,7 @@
    html {
    	font-size:62.5%;
    }
+
    body {
    	background-color: #333;
    	font-family: 'Oswald', sans-serif;
@@ -22,6 +25,7 @@
    	background-repeat: repeat;
    	/* background-position: left; */
    }
+
    h1 {
    	color: #fff;
    	text-align: center;
@@ -38,6 +42,7 @@
    	font-weight: bolder;
    	margin-bottom: 1rem;
    }
+
    h4 {
    	font-size: 2rem;
    	text-align: left;
@@ -46,22 +51,27 @@
    	margin: 0 auto;
    	color: #d2f5fb;
    }
+
    section {
    	position: relative;
    }
+
    section ul {
    	font-size: 1.7rem;
    	margin: 1rem 2rem;
    }
+
    section ul li {
    	margin-top: 1rem;
    	margin-bottom: 1rem;
    }
+
    section ul li span {
    	font-size: 2.3rem;
    	margin-top: 1rem;
    	margin-bottom: 1rem;
    }
+
    #menu ul li {
    	width: 50%;
    	margin: 2rem auto;
@@ -72,7 +82,7 @@
    	font-size: 3rem;
    	display: block;
    	overflow: hidden;
-
+   	/* efecto css3 sobre botón */
    	background-color: #026873;
    	background-image: linear-gradient(90deg, rgba(255,255,255,.07) 50%, transparent 50%),
    	linear-gradient(90deg, rgba(255,255,255,.13) 50%, transparent 50%),
@@ -81,12 +91,10 @@
    	background-size: 13px, 29px, 37px, 53px;
    }
 
-   #corregir,
-   #reiniciar,
-   #anterior,
-   #siguiente {
+   #corregir {
    	display: none;
    }
+
    #menu ul li:hover {
    	background-color: rgb(182, 50, 50);
    	color: rgb(56, 83, 90);
@@ -96,8 +104,8 @@
 
    	-webkit-transition: background-color .6s; /* Safari */
    	transition: background-color .6s;
-
    }
+
    #resultado {
    	margin: 1rem auto;
    	width: 60%;
@@ -109,9 +117,11 @@
    h4 {
    	color: #000;
    }
+
    .opcion label {
    	font-weight: bolder;
    }
+   
    img {
    	width: 100%;
    	margin-top: 5%;
