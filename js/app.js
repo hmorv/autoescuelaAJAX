@@ -1,3 +1,82 @@
+function iniciar_partida() {
+	var tiempo = 60 * 1;
+	destino = $('#tiempo');
+
+	$("section").empty();
+
+	$("#inicio").css({
+		display: 'none'
+	});
+	$("#corregir").css({
+		display: 'block'
+	});
+	$("input").prop({
+		disabled: false
+	});
+	startTimer(tiempo, destino);
+
+	/*var temporizador = duracion, minutos, segundos;
+	var tempo = setInterval(function () {
+		minutos = parseInt(temporizador / 60, 10);
+		segundos = parseInt(temporizador % 60, 10);
+
+		minutos = minutos < 10 ? "0" + minutos : minutos;
+		segundos = segundos < 10 ? "0" + segundos : segundos;
+
+		destino.text("Tiempo restante: " + minutos + ":" + segundos)
+
+		if(--temporizador < 0) {
+			clearTimeout(tempo);
+			finalizar_partida();
+			return;
+		}
+	}, 1000);*/
+
+
+	mostrar_mensaje("#resultado","<h1>Vamos, suerte!</h1>");
+	cargar_cuestionario('xml/datos.xml');
+
+}
+function finalizar_partida() {
+	$("#tiempo").empty();
+
+	$("input").prop({
+		disabled: true
+	});
+	
+	$("#corregir").css({
+		display: 'none',
+	});
+	$("#inicio").css({
+		display: 'block',
+	});
+	corregir_test();
+}
+
+function startTimer(duracion, destino) {
+	var temporizador = duracion, minutos, segundos;
+	var tempo = setInterval(function () {
+		$("#corregir").click(function(event) {
+			clearTimeout(tempo);
+			finalizar_partida();
+			return;
+		});
+		minutos = parseInt(temporizador / 60, 10);
+		segundos = parseInt(temporizador % 60, 10);
+
+		minutos = minutos < 10 ? "0" + minutos : minutos;
+		segundos = segundos < 10 ? "0" + segundos : segundos;
+
+		destino.text("Tiempo restante: " + minutos + ":" + segundos)
+
+		if(--temporizador < 0) {
+			clearTimeout(tempo);
+			finalizar_partida();
+			return;
+		}
+	}, 1000);
+}
+
 function cargar_cuestionario(xml) {
 	/* esta funcion hace una llamada AJAX al xml y genera el cuestionario en el HTML */
 	$.ajax({
@@ -166,32 +245,10 @@ $(document).ready(function() {
 	$("#corregir").hide();
 
 	$("#inicio").click(function(event) {
-		$("section").empty();
-
-		$(this).css({
-			display: 'none'
-		});
-		$("#corregir").css({
-			display: 'block'
-		});
-		$("input").prop({
-			disabled: false
-		});
-
-		mostrar_mensaje("#resultado","<h1>Vamos, suerte!</h1>");
-		cargar_cuestionario('xml/datos.xml');
+		iniciar_partida();
 	});
 
 	$("#corregir").click(function(event) {
-		$("input").prop({
-			disabled: true
-		});
-		corregir_test();
-		$(this).css({
-			display: 'none',
-		});
-		$("#inicio").css({
-			display: 'block',
-		});
+		finalizar_partida();
 	});
 });
