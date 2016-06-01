@@ -112,6 +112,13 @@
    	font-size: 3rem;
    	color: #fff;
    }
+
+   #tiempo {
+      font-size: 3rem;
+      color: yellow;
+      text-align: center;
+      margin: 0 auto;
+   }
    
    h3,
    h4 {
