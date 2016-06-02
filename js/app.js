@@ -15,24 +15,6 @@ function iniciar_partida() {
 	});
 	startTimer(tiempo, destino);
 
-	/*var temporizador = duracion, minutos, segundos;
-	var tempo = setInterval(function () {
-		minutos = parseInt(temporizador / 60, 10);
-		segundos = parseInt(temporizador % 60, 10);
-
-		minutos = minutos < 10 ? "0" + minutos : minutos;
-		segundos = segundos < 10 ? "0" + segundos : segundos;
-
-		destino.text("Tiempo restante: " + minutos + ":" + segundos)
-
-		if(--temporizador < 0) {
-			clearTimeout(tempo);
-			finalizar_partida();
-			return;
-		}
-	}, 1000);*/
-
-
 	mostrar_mensaje("#resultado","<h1>Vamos, suerte!</h1>");
 	cargar_cuestionario('xml/datos.xml');
 
