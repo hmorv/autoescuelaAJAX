@@ -1,6 +1,6 @@
 function iniciar_partida() {
-	var tiempo = 60 * 1;
-	destino = $('#tiempo');
+	var tiempo = 60 * 15;
+	var destino = $('#tiempo');
 
 	$("section").empty();
 
@@ -224,13 +224,13 @@ function mostrar_mensaje(destino, mensaje) {
 
 $(document).ready(function() {
 	//ocultamos el boton corregir
-	$("#corregir").hide();
+	$("#corregir").toggle("fast");
 
 	$("#inicio").click(function(event) {
 		iniciar_partida();
 	});
 
-	$("#corregir").click(function(event) {
+	/*$("#corregir").click(function(event) {
 		finalizar_partida();
-	});
+	});*/
 });
