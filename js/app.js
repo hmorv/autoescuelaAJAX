@@ -1,6 +1,6 @@
 function iniciar_partida() {
-	var tiempo = 60 * 1;
-	destino = $('#tiempo');
+	var tiempo = 60 * 15;
+	var destino = $('#tiempo');
 
 	$("section").empty();
 
@@ -14,24 +14,6 @@ function iniciar_partida() {
 		disabled: false
 	});
 	startTimer(tiempo, destino);
-
-	/*var temporizador = duracion, minutos, segundos;
-	var tempo = setInterval(function () {
-		minutos = parseInt(temporizador / 60, 10);
-		segundos = parseInt(temporizador % 60, 10);
-
-		minutos = minutos < 10 ? "0" + minutos : minutos;
-		segundos = segundos < 10 ? "0" + segundos : segundos;
-
-		destino.text("Tiempo restante: " + minutos + ":" + segundos)
-
-		if(--temporizador < 0) {
-			clearTimeout(tempo);
-			finalizar_partida();
-			return;
-		}
-	}, 1000);*/
-
 
 	mostrar_mensaje("#resultado","<h1>Vamos, suerte!</h1>");
 	cargar_cuestionario('xml/datos.xml');
@@ -242,13 +224,13 @@ function mostrar_mensaje(destino, mensaje) {
 
 $(document).ready(function() {
 	//ocultamos el boton corregir
-	$("#corregir").hide();
+	$("#corregir").toggle("fast");
 
 	$("#inicio").click(function(event) {
 		iniciar_partida();
 	});
 
-	$("#corregir").click(function(event) {
+	/*$("#corregir").click(function(event) {
 		finalizar_partida();
-	});
+	});*/
 });
