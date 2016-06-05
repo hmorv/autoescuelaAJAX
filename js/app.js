@@ -3,13 +3,12 @@ function iniciar_partida() {
 	var destino = $('#tiempo');
 
 	$("section").empty();
+	$("section").animate({"opacity": 1}, 1000);
 
-	$("#inicio").css({
-		display: 'none'
-	});
-	$("#corregir").css({
-		display: 'block'
-	});
+	$("#inicio").toggle("slow");
+	$("#corregir").toggle("slow");
+	
+	//reactivamos los inputs
 	$("input").prop({
 		disabled: false
 	});
@@ -20,6 +19,7 @@ function iniciar_partida() {
 
 }
 function finalizar_partida() {
+	$("section").animate({"opacity":.6}, 600);
 	$("#tiempo").empty();
 
 	$("input").prop({
@@ -51,6 +51,11 @@ function startTimer(duracion, destino) {
 
 		destino.text("Tiempo restante: " + minutos + ":" + segundos)
 
+		// si queda menos de 1 minuto cambiamos el color del temporizador a rojo
+		if(temporizador < 60) {
+			$("#tiempo").css('color', 'red');
+		}
+		//se acabó el tiempo
 		if(--temporizador < 0) {
 			clearTimeout(tempo);
 			finalizar_partida();
@@ -115,7 +120,7 @@ function generar_bloques_preguntas($preguntas) {
 	/* genera una cadena con el código HTML del cuestionario y lo devuelve */
 	var bloque_preguntas = "";
 	if($preguntas.length > 0) {
-		for(var i = 0; i < $preguntas.length; i++ ) {
+		for( var i = 0; i < $preguntas.length; i++ ) {
 			bloque_preguntas += "<h3> Pregunta - " + (i+1) + "</h3>"
 			bloque_preguntas += "<h4>" + $preguntas[i].childNodes[1].textContent + "</h4>";
 			bloque_preguntas += "<ul class='opcion'><li><label><input type='radio' name='"+i+"' value='"+(i+1)+"'>" + "<span>" + $preguntas[i].childNodes[3].textContent + "</span></label></li>";
@@ -145,7 +150,7 @@ function obtener_respuestas(origen) {
 	switch (origen) {
 		case "local":
 		$(".opcion").each(function(index, el) {
-			//recorremos toso los ul
+			//recorremos todos los ul
 			var grupo = this.childNodes;
 			for(var i = 0; i < grupo.length; i++) {
 				/*recorremos uno a uno los 3 input de cada bloque buscando 
@@ -213,7 +218,6 @@ function corregir_test() {
 		mostrar_mensaje("#resultado", "<h2>Aprobado! Has acertado "+ aciertos + " preguntas</h2>");
 	else
 		mostrar_mensaje("#resultado", "<h2>Suspendido! Has acertado "+ aciertos + " preguntas</h2>");
-
 }
 
 function mostrar_mensaje(destino, mensaje) {
@@ -221,16 +225,12 @@ function mostrar_mensaje(destino, mensaje) {
 	$(destino).empty;
 	$(destino).html(mensaje);
 }
-
+//aquí empieza todo:
 $(document).ready(function() {
 	//ocultamos el boton corregir
-	$("#corregir").toggle("fast");
+	//$("#corregir").toggle("fast");
 
 	$("#inicio").click(function(event) {
 		iniciar_partida();
 	});
-
-	/*$("#corregir").click(function(event) {
-		finalizar_partida();
-	});*/
 });

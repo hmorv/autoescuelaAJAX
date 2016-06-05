@@ -91,10 +91,6 @@
    	background-size: 13px, 29px, 37px, 53px;
    }
 
-   #corregir {
-   	display: none;
-   }
-
    #menu ul li:hover {
    	background-color: rgb(182, 50, 50);
    	color: rgb(56, 83, 90);
@@ -104,6 +100,10 @@
 
    	-webkit-transition: background-color .6s; /* Safari */
    	transition: background-color .6s;
+   }
+
+   #menu ul #corregir {
+      display: none;
    }
 
    #resultado {
